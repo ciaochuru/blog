@@ -16,6 +16,9 @@
                 <p class="body">{{ $post->body }}</p>
             @endforeach
         </div>
+        <div class="footer">
+            <a href="/posts/create">create</a>
+        </div>
         <div class="paginate">{{ $posts->links() }}</div>
     </body>
 </html>

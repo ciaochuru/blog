@@ -14,7 +14,7 @@ class PostController extends Controller
     }
     
     public function show (Post $post) {
-        //投稿詳細表示
+        //投稿詳細表示、postテーブルのデータをviewへ
         return view('posts.show')->with(['post' => $post]);
     }
     
@@ -35,8 +35,10 @@ class PostController extends Controller
         return view('posts.edit')->with(['post' => $post]);
     }
     
-    public function update () {
+    public function update (PostRequest $request, Post $post) {
         //編集実行
+        $input = $request['post'];
+        $post->fill($input)->save();
         return redirect('/posts/' . $post->id);
     }
 }

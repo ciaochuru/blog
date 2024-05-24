@@ -18,7 +18,7 @@
             <div class="edit">
                 <a href="/posts/{{$post->id}}/edit">編集</a>
             </div>
-            <a href="/">投稿一覧に戻る<a>  
+            <a href="/">投稿一覧に戻る<a> 
         </div>
     </body>
 </html>

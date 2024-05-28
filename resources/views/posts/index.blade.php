@@ -18,7 +18,7 @@
                 </h2>
                 <p class="body">{{ $post->body }}</p>
                 <div class="delete">
-                    <form action="/posts/{{$post->id}}" id="form_{{ $post->id }}" method="post">
+                    <form action="/posts/{{ $post->id }}" id="form_{{ $post->id }}" method="post">
                         @csrf
                         @method('DELETE')
                         <input type="button" onclick="deletePost({{ $post->id }})" value="delete" />

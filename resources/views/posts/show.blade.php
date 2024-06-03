@@ -13,6 +13,9 @@
             <div class="content_body">
                 <p class="body">{{ $post->body }}</p>
             </div>
+            <div class="category">
+                <a href="/categories/{{ $post->category->id }}">{{ $post->category->name }}</a>
+            </div>
         </div>
         <div class="footer">
             <div class="edit">

@@ -7,7 +7,7 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     </head>
     <body>
-        <h1>Blog</h1>
+        <h1>カテゴリー別</h1>
         <div class="header">
             <a href="/posts/create">[create]</a>
         </div>
@@ -28,6 +28,9 @@
                     </form>
                 </div>
             @endforeach
+            <div class="footer">
+                <a href="/">投稿一覧に戻る</a>
+            </div>
         </div>
         <div class="paginate">{{ $posts->links() }}</div>
         <script>

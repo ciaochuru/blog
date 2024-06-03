@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('posts', function (Blueprint $table) {
-            $table->string('image', 100)->nullable();
+            $table->foreignId('category_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
         });
     }
 
@@ -22,7 +22,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('posts', function (Blueprint $table) {
-            $table->dropColumn('image');
+            $table->dropColumn('category_id');
         });
     }
 };

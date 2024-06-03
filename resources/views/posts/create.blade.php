@@ -7,7 +7,7 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     </head>
     <body>
-        <h1>Blog Name</h1>
+        <h1>投稿</h1>
         <div class="content">
             <form action="/posts" method="POST">
                 @csrf
@@ -21,9 +21,18 @@
                     <textarea name="post[body]" placeholder="今日も一日お疲れさまでした。">{{ old('post.body') }}</textarea><br>
                     <p class="body_error" style="color:red">{{ $errors->first('post.body') }}</p>
                 </div>
+                <div class="categories">
+                    <h3>カテゴリー：</h3>
+                    <select name="post[category_id]">
+                        @foreach ($categories as $category)
+                            <option value="{{ $category->id }}">{{ $category->name }}</option>
+                        @endforeach
+                    </select>
+                </div>
                 <input type="submit" value="store">
             </form>
         </div>
+        
         <div class="footer">
             <a href="/">戻る</a>
         </div>

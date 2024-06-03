@@ -7,9 +7,9 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     </head>
     <body>
-        <h1>Blog Name</h1>
+        <h1>Blog</h1>
         <div class="header">
-            <a href="/posts/create">create</a>
+            <a href="/posts/create">[create]</a>
         </div>
         <div class="posts">
             @foreach ($posts as $post)
@@ -17,6 +17,9 @@
                     <a href="/posts/{{ $post->id }}">{{ $post->title }}</a>
                 </h2>
                 <p class="body">{{ $post->body }}</p>
+                <div class="category">
+                    <a href="">{{ $post->category->name }}</a>
+                </div>
                 <div class="delete">
                     <form action="/posts/{{ $post->id }}" id="form_{{ $post->id }}" method="post">
                         @csrf
